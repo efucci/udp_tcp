@@ -1,13 +1,14 @@
 import socket
+import sys
 
-UDP_IP = '172.19.4.73'
-UDP_PORT = 5005
-MESSAGE = "Hello, World!"
 
-print ("UDP target IP:", UDP_IP)
-print ("UDP target port:", UDP_PORT)
-print ("message:", MESSAGE)
+MESSAGE = "Hello World!"
 
-sock = socket.socket(socket.AF_INET, # Internet
-                     socket.SOCK_DGRAM) # UDP
-sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
+ip = sys.argv[1]
+port = int(sys.argv[2])
+print("UDP target IP:", str(ip))
+print("UDP target port:", str(port))
+print("message:", MESSAGE)
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # UDP
+sock.sendto(MESSAGE, (ip, port))
