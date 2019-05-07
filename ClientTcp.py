@@ -5,11 +5,11 @@ import sys
 data = "Hello world Tcp!"
 
 
-def start_connection(args):
+def start_connectionTCP(ip,port):
     with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as sock:
         #Connect to server and send data
 
-        sock.connect((args[1], int(args[2])))
+        sock.connect((ip, port))
         sock.sendall(bytes(data, "utf-8"))
         '''
         # Receive data

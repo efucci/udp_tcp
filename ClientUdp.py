@@ -3,11 +3,11 @@ import sys
 
 MESSAGE = "Hello World Udp!"
 
-def start_connection(args):
+def start_connectionUDP(ip,port):
 
 
-    ip = sys.argv[1]
-    port = int(sys.argv[2])
+    #ip = sys.argv[1]
+    #port = int(sys.argv[2])
     print("UDP target IP:", str(ip))
     print("UDP target port:", str(port))
     print("message:", MESSAGE)
