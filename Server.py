@@ -11,7 +11,7 @@ def udp_listener(ip, port):
     try:
         while True:
             data, addr = sock.recvfrom(1024)  # buffer size is 1024 bytes
-            print('received message:', data)
+            print('received message:', data.decode())
     except Exception as e:
         print(e)
 
@@ -30,7 +30,7 @@ def tcp_listener(ip, port):
         while 1:
             data = conn.recv(BUFFER_SIZE)
             if not data: break
-            print("received data:", data)
+            print('received data:', data.decode())
             conn.send(data)  # echo
     except Exception as e:
         print(e)

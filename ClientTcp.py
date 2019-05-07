@@ -2,7 +2,7 @@ import socket
 import sys
 # Create the socket
 
-data = "Questo è stato scritto in Python\n\r"
+data = "Hello world Tcp!"
 
 
 def start_connection(args):
@@ -11,12 +11,10 @@ def start_connection(args):
 
         sock.connect((args[1], int(args[2])))
         sock.sendall(bytes(data, "utf-8"))
-
+        '''
         # Receive data
         received=str(sock.recv(1024), "utf-8")
         print(received)
         sock.close()
+        '''
 
-
-if __name__ == '__main__':
-    start_connection(sys.argv)
